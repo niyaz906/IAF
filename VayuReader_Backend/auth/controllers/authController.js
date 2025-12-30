@@ -10,7 +10,7 @@ const buildOtpUrl = (to, otp) => {
   // Handle the space in the provided path by URL-encoding it
   const base = OTP_GATEWAY_URL.replace(' ', '%20');
   const url = new URL(base);
-  url.searchParams.set('from', 'VAYUVARTA');
+  url.searchParams.set('from', 'VAYUREADER');
   url.searchParams.set('to', to);
   url.searchParams.set('text', `Your OTP code for Login : ${otp} . Regards,`);
   return url.toString();
@@ -234,5 +234,6 @@ const verifyOtp = async (req, res) => {
     });
   }
 };
+
 
 module.exports = { signup, login, getProfile, requestOtp, verifyOtp };
